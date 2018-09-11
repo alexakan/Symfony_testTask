@@ -1,0 +1,25 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+{% block body %}
+    <h1>Статус заявки</h1>
+    <p>Номер Заявки: {{ request.id }}</p>
+    <p>Дата создания заявки: {{ request.created.date|date("d.m.Y H:m:s") }}</p>
+    <p>Актуальный статус заявки: {{ request.state.stateTitle }}</p>
+    <p>Заголовок заявки: {{ request.title }}</p>
+    <p>Описание заявки: {{ request.description }}</p>
+    {% if(request.closedDate) %}
+    <p>Дата закрытия заявки: {{ request.closedDate.date|date("d.m.Y H:m:s") }}</p>
+    {% endif %}
+    {{ form_start(form) }}
+        {{ form_label(form.state, 'Поменять статус заявки на') }}
+        {{ form_widget(form.state) }}
+        {{ form_row(form.submit, { 'label': 'Изменить заявку' }) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

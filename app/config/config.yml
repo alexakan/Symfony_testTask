@@ -35,6 +35,12 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+      - 'bootstrap_4_layout.html.twig'
+    date:
+      format: 'd.m.Y H:i:s'
+      interval_format: '%%d days'
+#      timezone: Asia/Irkutsk
 
 # Doctrine Configuration
 doctrine:
@@ -46,6 +52,7 @@ doctrine:
         user: '%database_user%'
         password: '%database_password%'
         charset: UTF8
+        server_version: 5.6
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'

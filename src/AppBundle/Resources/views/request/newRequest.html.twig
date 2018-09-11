@@ -1,0 +1,19 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+{% block body %}
+    <h1>Новая заявка</h1>
+    {{ form_start(newRequest_form) }}
+        {{ form_label(newRequest_form.title, 'Наименование заявки') }}
+        {{ form_widget(newRequest_form.title) }}
+        {{ form_label(newRequest_form.description, 'Суть заявки') }}
+        {{ form_widget(newRequest_form.description) }}
+        {{ form_row(newRequest_form.submit, { 'label': 'Выставить новую заявку' }) }}
+    {{ form_end(newRequest_form) }}
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
